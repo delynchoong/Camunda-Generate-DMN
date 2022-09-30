@@ -21,15 +21,15 @@ import org.camunda.bpm.model.dmn.instance.Output;
 import org.camunda.bpm.model.dmn.instance.OutputEntry;
 import org.camunda.bpm.model.dmn.instance.Rule;
 import org.camunda.bpm.model.dmn.instance.Text;
-
-import camundajar.impl.scala.Console;
-
+import org.camunda.bpm.*;
 public class DmnModelCreator {
 
   //check docs for library 
   //https://docs.camunda.org/manual/7.12/user-guide/model-api/dmn-model-api/create-a-model/
   public static void main(String[] args) {
 
+    System.out.println("helloworld");
+    
     //define dmn model
     DmnModelInstance modelInstance = Dmn.createEmptyModel();
     Definitions definitions = modelInstance.newInstance(Definitions.class);
@@ -205,12 +205,13 @@ public class DmnModelCreator {
           {
             CloseableHttpResponse  response = client.execute(post);
             System.out.println(response);
-            myObj.delete();
+            //myObj.delete();
           }
           catch(Exception IOException)
           {
-            Console.println(IOException.toString());
+            System.out.println(IOException.toString());
           }     
+          
   }
 
 }
